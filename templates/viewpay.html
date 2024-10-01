@@ -1,0 +1,58 @@
+<html>
+<body>
+<center>
+    <!-- <table border="1"> -->
+        <style> 
+            #customers  
+            { 
+                font-family:Arial,Helvetica,sans-serif; 
+                border-collapse:collapse; 
+                width:100%; 
+             
+            } 
+            #customers td, #customers th { 
+                border:1px solid #ddd; 
+                padding:8px; 
+             
+            } 
+            #customers tr:nth-child(even){background-color:#f2f2f2;} 
+            #customers tr:hover{background-color:#ddd;} 
+            #customers th { 
+            padding-top:12px; 
+            padding-bottom:12px; 
+            text-align:left; 
+            background-color:#1d2951 ; 
+            color:white; 
+            } 
+            #customers th, td  
+                { 
+                    padding-left: 10px; 
+                    padding-right:6px;  
+                    padding-top:1px; 
+                    padding-bottom:20px; 
+                } 
+             
+            </style>
+        <table id="customers">
+<tr>
+<!--<th>Payment_id</th>-->
+<th>Card holder name:</th>
+<th>Card number:</th>
+<th>CVV:</th>
+<th>Expiry date:</th>
+<th>Amount:</th>
+</tr>
+{% for i in list %}
+<tr>
+<!--<td>{{i.payid}}</td>-->
+<td>{{i.chname}}</td>
+<td>{{i.cno}}</td>
+<td>{{i.cvv}}</td>
+<td>{{i.cdate}}</td>
+<td>{{i.amt}}</td>
+</tr>
+{% endfor %}
+
+</table></center>
+</body>
+</html>

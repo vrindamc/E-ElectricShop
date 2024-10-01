@@ -1,0 +1,198 @@
+
+{% include 'adminhead.html' %}
+ <div class="breadcrumb-option set-bg" data-setbg="/static/img/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Staff Report</h2>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+	<br>
+<center>
+  
+<div style="width:90%" > 
+         
+			
+	<br>
+	<br>
+				
+						
+			<table>
+						<center><form action="/staffreport/">
+				<input type="date" name="d1"/><input type="date" name="d2"/>
+				<input type="submit" value="search"/></form></center>
+			
+		</table>
+
+<br>
+<br>
+		
+
+  <center>
+<form   >
+<br>
+<br>
+
+	<!-- <table border="1" style="width:90%;text-align:center">
+					<tr style="height:50px"> -->
+						<style> 
+							#customers  
+							{ 
+								font-family:Arial,Helvetica,sans-serif; 
+								border-collapse:collapse; 
+								width:100%; 
+							 
+							} 
+							#customers td, #customers th { 
+								border:1px solid #ddd; 
+								padding:8px; 
+							 
+							} 
+							#customers tr:nth-child(even){background-color:#f2f2f2;} 
+							#customers tr:hover{background-color:#ddd;} 
+							#customers th { 
+							padding-top:12px; 
+							padding-bottom:12px; 
+							text-align:left; 
+							background-color:#1d2951 ; 
+							color:white; 
+							} 
+							#customers th, td  
+								{ 
+									padding-left: 10px; 
+									padding-right:6px;  
+									padding-top:1px; 
+									padding-bottom:20px; 
+								} 
+							 
+							</style>
+						<table id="customers">
+<th>staff ID</th>
+<th>Name</th>
+<th>House Name</th>
+<th>Street</th>
+<th>City</th>
+<th>District</th>
+
+<th>Pincode</th>
+<th>State</th>
+
+<th>Phone</th>
+<th>joining Date</th>
+<th>Email</th>
+
+</tr>
+{% for i in list %}
+<tr>
+<td>{{i.staffid}}</td>
+<td>{{i.sname}}   </td>
+<td>{{i.shname}}</td>
+<td>{{i.sstreet}}</td>
+<td>{{i.scity}}</td>
+<td>{{i.sdist}}</td>
+<td>{{i.spin}}</td>
+
+<td>{{i.sstate}}</td>
+<td>{{i.sphn}}</td>
+
+<td>{{i.sem}}</td>
+<td>{{i.jdate}}</td>
+</tr>
+{% endfor %}
+</table> 
+</form>
+<br>
+<button onclick="window.print()">PRINT </button>
+</center> 
+
+<!-- js -->
+<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<script src="/static/js/modernizr.custom.js"></script>
+	<!-- Custom-JavaScript-File-Links --> 
+	<!-- cart-js -->
+	<script src="/static/js/minicart.min.js"></script>
+<script>
+	// Mini Cart
+	paypal.minicart.render({
+		action: '#'
+	});
+
+	if (~window.location.search.indexOf('reset=true')) {
+		paypal.minicart.reset();
+	}
+</script>
+
+	<!-- //cart-js --> 
+<!-- script for responsive tabs -->						
+<script src="js/easy-responsive-tabs.js"></script>
+<script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion           
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+</script>
+<!-- //script for responsive tabs -->		
+<!-- stats -->
+	<script src="/static/js/jquery.waypoints.min.js"></script>
+	<script src="/static/js/jquery.countup.js"></script>
+	<script>
+		$('.counter').countUp();
+	</script>
+<!-- //stats -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/jquery.easing.min.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+
+<!-- for bootstrap working -->
+<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+</body>
+</html>
